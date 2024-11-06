@@ -1,0 +1,433 @@
+# dhcpd.conf
+#
+# Sample configuration file for ISC dhcpd
+#
+# Attention: If /etc/ltsp/dhcpd.conf exists, that will be used as
+# configuration file instead of this file.
+#
+
+# option definitions common to all supported networks...
+option domain-name-servers 1.1.1.1, 8.8.8.8;
+
+
+# The ddns-updates-style parameter controls whether or not the server will
+# attempt to do a DNS update when a lease is confirmed. We default to the
+# behavior of the version 2 packages ('none', since DHCP v2 didn't
+# have support for DDNS.)
+ddns-update-style none;
+
+subnet 192.168.0.0 netmask 255.255.0.0 {
+        option domain-name "dhcpservidores";
+        option broadcast-address 192.168.255.255;
+        option routers 192.168.0.1;
+        range 192.168.150.1 192.168.254.254;
+        default-lease-time 15768000;
+        max-lease-time 31536000;
+}
+
+subnet 192.169.0.0 netmask 255.255.0.0 {
+        option domain-name "dhcptrabajo";
+        option broadcast-address 192.169.255.255;
+        option routers 192.169.0.1;
+        range 192.169.150.1 192.169.254.254;
+        default-lease-time 144000;
+        max-lease-time 288000;
+}
+
+subnet 192.170.0.0 netmask 255.255.0.0 {
+        option domain-name "dhcpinalambrico";
+        option broadcast-address 192.170.255.255;
+        option routers 192.170.0.1;
+        range 192.170.150.1 192.170.254.254;
+        default-lease-time 900;
+        max-lease-time 1800;
+}
+
+group {
+    option domain-name "dhcp.izv";
+
+    host servidordhcplocal {
+            hardware ethernet 08:00:27:8C:C9:BA;
+            fixed-address 192.168.0.2;
+    }
+    
+    host trabajodhcplocal {
+            hardware ethernet 08:00:27:0E:99:BD;
+            fixed-address 192.169.0.2;
+    }
+
+    host inalambricdhcplocal {
+            hardware ethernet 08:00:27:A6:53:30;
+            fixed-address 192.170.0.2;
+    }
+}
+
+group server {
+	option domain-name "server";
+
+	host impresora{
+		hardware ethernet D4:F5:13:9A:BC:7f;
+		fixed-address 192.169.0.3;
+	}
+
+	host SmartThings{
+		hardware ethernet d0:52:a8:00:67:5e;
+		fixed-address 192.169.0.4;
+	}
+
+	host InsteonCamera{
+		hardware ethernet 00:62:6e:51:27:2e;
+		fixed-address 192.169.0.5;
+	}
+
+	host PrintServer{
+		hardware ethernet e8:ab:fa:19:de:4f;
+		fixed-address 192.169.0.6;
+	}
+
+	host WithingsSmartBabyMonitor{
+		hardware ethernet 00:24:e4:11:18:a8;
+		fixed-address 192.169.0.7;
+	}
+
+	host MailServer{
+		hardware ethernet 74:c6:3b:29:d7:1d;
+		fixed-address 192.169.0.8;
+	}
+
+	host HPPrinter{
+		hardware ethernet 70:5a:0f:e4:9b:c0;
+		fixed-address 192.169.0.9;
+	}
+
+	host TPLinkRouterBridgeLAN(Gateway){
+		hardware ethernet 14:cc:20:51:33:ea;
+		fixed-address 192.169.0.10;
+	}
+
+	host serverhttp{
+		hardware ethernet 00:1A:2B:3C:4D:5E;
+		fixed-address 192.168.0.3;
+	}
+
+	host servermail{
+		hardware ethernet 54:E1:AD:32:BC:7f;
+		fixed-address 192.168.0.4;
+	}
+
+	host WebServer{
+		hardware ethernet 44:65:0d:56:cc:d3;
+		fixed-address 192.168.0.5;
+	}
+
+	host Belkinwemomotionsensor{
+		hardware ethernet ec:1a:59:83:28:11;
+		fixed-address 192.168.0.6;
+	}
+
+	host DataBaseServer{
+		hardware ethernet 08:21:ef:3b:fc:e3;
+		fixed-address 192.168.0.7;
+	}
+}
+group wireless {
+	option domain-name "wireless";
+
+	host camaraip1{
+		hardware ethernet 08:00:27:15:89:1F;
+		fixed-address 192.170.0.3;
+	}
+
+	host camaraip2{
+		hardware ethernet AC:DE:48:00:11:22;
+		fixed-address 192.170.0.4;
+	}
+
+	host NetatmoWelcome{
+		hardware ethernet 70:ee:50:18:34:43;
+		fixed-address 192.170.0.5;
+	}
+
+	host TP-LinkDayNightCloudcamera{
+		hardware ethernet f4:f2:6d:93:51:f1;
+		fixed-address 192.170.0.6;
+	}
+
+	host SamsungSmartCam{
+		hardware ethernet 00:16:6c:ab:6b:88;
+		fixed-address 192.170.0.7;
+	}
+
+	host Dropcam{
+		hardware ethernet 30:8c:fb:2f:e4:b2;
+		fixed-address 192.170.0.8;
+	}
+
+	host BelkinWemoswitch{
+		hardware ethernet ec:1a:59:79:f4:89;
+		fixed-address 192.170.0.9;
+	}
+
+	host TP-LinkSmartplug{
+		hardware ethernet 50:c7:bf:00:56:39;
+		fixed-address 192.170.0.10;
+	}
+
+	host NESTProtectsmokealarm{
+		hardware ethernet 18:b4:30:25:be:e4;
+		fixed-address 192.170.0.11;
+	}
+
+	host Netatmoweatherstation{
+		hardware ethernet 70:ee:50:03:b8:ac;
+		fixed-address 192.170.0.12;
+	}
+
+	host WithingsSmartscale{
+		hardware ethernet 00:24:e4:1b:6f:96;
+		fixed-address 192.170.0.13;
+	}
+
+	host BlipcareBloodPressuremeter{
+		hardware ethernet 74:6a:89:00:2e:25;
+		fixed-address 192.170.0.14;
+	}
+
+	host WithingsAurasmartsleepsensor{
+		hardware ethernet 00:24:e4:20:28:c6;
+		fixed-address 192.170.0.15;
+	}
+
+	host LightBulbsLiFXSmartBulb{
+		hardware ethernet d0:73:d5:01:83:08;
+		fixed-address 192.170.0.16;
+	}
+
+	host TribySpeaker{
+		hardware ethernet 18:b7:9e:02:20:44;
+		fixed-address 192.170.0.17;
+	}
+
+	host PIX-STARPhoto-frame{
+		hardware ethernet e0:76:d0:33:bb:85;
+		fixed-address 192.170.0.18;
+	}
+
+	host NestDropcam{
+		hardware ethernet 30:8c:fb:b6:ea:45;
+		fixed-address 192.170.0.19;
+	}
+
+	host AndroidPhone{
+		hardware ethernet 40:f3:08:ff:1e:da;
+		fixed-address 192.170.0.20;
+	}
+
+	host Laptop{
+		hardware ethernet 74:2f:68:81:69:42;
+		fixed-address 192.170.0.21;
+	}
+
+	host MacBook{
+		hardware ethernet ac:bc:32:d4:6f:2f;
+		fixed-address 192.170.0.22;
+	}
+
+	host camaraip1{
+		hardware ethernet 08:00:27:15:89:1F;
+		fixed-address 192.170.0.3;
+	}
+
+	host camaraip2{
+		hardware ethernet AC:DE:48:00:11:22;
+		fixed-address 192.170.0.4;
+	}
+
+	host NetatmoWelcome{
+		hardware ethernet 70:ee:50:18:34:43;
+		fixed-address 192.170.0.5;
+	}
+
+	host TP-LinkDayNightCloudcamera{
+		hardware ethernet f4:f2:6d:93:51:f1;
+		fixed-address 192.170.0.6;
+	}
+
+	host SamsungSmartCam{
+		hardware ethernet 00:16:6c:ab:6b:88;
+		fixed-address 192.170.0.7;
+	}
+
+	host Dropcam{
+		hardware ethernet 30:8c:fb:2f:e4:b2;
+		fixed-address 192.170.0.8;
+	}
+
+	host BelkinWemoswitch{
+		hardware ethernet ec:1a:59:79:f4:89;
+		fixed-address 192.170.0.9;
+	}
+
+	host TP-LinkSmartplug{
+		hardware ethernet 50:c7:bf:00:56:39;
+		fixed-address 192.170.0.10;
+	}
+
+	host NESTProtectsmokealarm{
+		hardware ethernet 18:b4:30:25:be:e4;
+		fixed-address 192.170.0.11;
+	}
+
+	host Netatmoweatherstation{
+		hardware ethernet 70:ee:50:03:b8:ac;
+		fixed-address 192.170.0.12;
+	}
+
+	host WithingsSmartscale{
+		hardware ethernet 00:24:e4:1b:6f:96;
+		fixed-address 192.170.0.13;
+	}
+
+	host BlipcareBloodPressuremeter{
+		hardware ethernet 74:6a:89:00:2e:25;
+		fixed-address 192.170.0.14;
+	}
+
+	host WithingsAurasmartsleepsensor{
+		hardware ethernet 00:24:e4:20:28:c6;
+		fixed-address 192.170.0.15;
+	}
+
+	host LightBulbsLiFXSmartBulb{
+		hardware ethernet d0:73:d5:01:83:08;
+		fixed-address 192.170.0.16;
+	}
+
+	host TribySpeaker{
+		hardware ethernet 18:b7:9e:02:20:44;
+		fixed-address 192.170.0.17;
+	}
+
+	host PIX-STARPhoto-frame{
+		hardware ethernet e0:76:d0:33:bb:85;
+		fixed-address 192.170.0.18;
+	}
+
+	host NestDropcam{
+		hardware ethernet 30:8c:fb:b6:ea:45;
+		fixed-address 192.170.0.19;
+	}
+
+	host AndroidPhone{
+		hardware ethernet 40:f3:08:ff:1e:da;
+		fixed-address 192.170.0.20;
+	}
+
+	host Laptop{
+		hardware ethernet 74:2f:68:81:69:42;
+		fixed-address 192.170.0.21;
+	}
+
+	host MacBook{
+		hardware ethernet ac:bc:32:d4:6f:2f;
+		fixed-address 192.170.0.22;
+	}
+
+	host AndroidPhone1{
+		hardware ethernet b4:ce:f6:a7:a3:c2;
+		fixed-address 192.170.0.23;
+	}
+
+	host IPhone{
+		hardware ethernet d0:a6:37:df:a1:e1;
+		fixed-address 192.170.0.24;
+	}
+
+	host MacBookIphone{
+		hardware ethernet f4:5c:89:93:cc:85;
+		fixed-address 192.170.0.25;
+	}
+}
+group desktop {
+	option domain-name "desktop";
+
+	host impresora{
+		hardware ethernet D4:F5:13:9A:BC:7f;
+		fixed-address 192.169.0.3;
+	}
+
+	host SmartThings{
+		hardware ethernet d0:52:a8:00:67:5e;
+		fixed-address 192.169.0.4;
+	}
+
+	host InsteonCamera{
+		hardware ethernet 00:62:6e:51:27:2e;
+		fixed-address 192.169.0.5;
+	}
+
+	host PrintServer{
+		hardware ethernet e8:ab:fa:19:de:4f;
+		fixed-address 192.169.0.6;
+	}
+
+	host WithingsSmartBabyMonitor{
+		hardware ethernet 00:24:e4:11:18:a8;
+		fixed-address 192.169.0.7;
+	}
+
+	host MailServer{
+		hardware ethernet 74:c6:3b:29:d7:1d;
+		fixed-address 192.169.0.8;
+	}
+
+	host HPPrinter{
+		hardware ethernet 70:5a:0f:e4:9b:c0;
+		fixed-address 192.169.0.9;
+	}
+
+	host TPLinkRouterBridgeLAN(Gateway){
+		hardware ethernet 14:cc:20:51:33:ea;
+		fixed-address 192.169.0.10;
+	}
+
+	host impresora{
+		hardware ethernet D4:F5:13:9A:BC:7f;
+		fixed-address 192.169.0.3;
+	}
+
+	host SmartThings{
+		hardware ethernet d0:52:a8:00:67:5e;
+		fixed-address 192.169.0.4;
+	}
+
+	host InsteonCamera{
+		hardware ethernet 00:62:6e:51:27:2e;
+		fixed-address 192.169.0.5;
+	}
+
+	host PrintServer{
+		hardware ethernet e8:ab:fa:19:de:4f;
+		fixed-address 192.169.0.6;
+	}
+
+	host WithingsSmartBabyMonitor{
+		hardware ethernet 00:24:e4:11:18:a8;
+		fixed-address 192.169.0.7;
+	}
+
+	host MailServer{
+		hardware ethernet 74:c6:3b:29:d7:1d;
+		fixed-address 192.169.0.8;
+	}
+
+	host HPPrinter{
+		hardware ethernet 70:5a:0f:e4:9b:c0;
+		fixed-address 192.169.0.9;
+	}
+
+	host TPLinkRouterBridgeLANGateway{
+		hardware ethernet 14:cc:20:51:33:ea;
+		fixed-address 192.169.0.10;
+	}
+}
