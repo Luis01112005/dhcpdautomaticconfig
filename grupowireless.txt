@@ -1,0 +1,215 @@
+
+	host camaraip1{
+		hardware ethernet 08:00:27:15:89:1F;
+		fixed-address 192.170.0.3;
+	}
+
+	host camaraip2{
+		hardware ethernet AC:DE:48:00:11:22;
+		fixed-address 192.170.0.4;
+	}
+
+	host NetatmoWelcome{
+		hardware ethernet 70:ee:50:18:34:43;
+		fixed-address 192.170.0.5;
+	}
+
+	host TP-LinkDayNightCloudcamera{
+		hardware ethernet f4:f2:6d:93:51:f1;
+		fixed-address 192.170.0.6;
+	}
+
+	host SamsungSmartCam{
+		hardware ethernet 00:16:6c:ab:6b:88;
+		fixed-address 192.170.0.7;
+	}
+
+	host Dropcam{
+		hardware ethernet 30:8c:fb:2f:e4:b2;
+		fixed-address 192.170.0.8;
+	}
+
+	host BelkinWemoswitch{
+		hardware ethernet ec:1a:59:79:f4:89;
+		fixed-address 192.170.0.9;
+	}
+
+	host TP-LinkSmartplug{
+		hardware ethernet 50:c7:bf:00:56:39;
+		fixed-address 192.170.0.10;
+	}
+
+	host NESTProtectsmokealarm{
+		hardware ethernet 18:b4:30:25:be:e4;
+		fixed-address 192.170.0.11;
+	}
+
+	host Netatmoweatherstation{
+		hardware ethernet 70:ee:50:03:b8:ac;
+		fixed-address 192.170.0.12;
+	}
+
+	host WithingsSmartscale{
+		hardware ethernet 00:24:e4:1b:6f:96;
+		fixed-address 192.170.0.13;
+	}
+
+	host BlipcareBloodPressuremeter{
+		hardware ethernet 74:6a:89:00:2e:25;
+		fixed-address 192.170.0.14;
+	}
+
+	host WithingsAurasmartsleepsensor{
+		hardware ethernet 00:24:e4:20:28:c6;
+		fixed-address 192.170.0.15;
+	}
+
+	host LightBulbsLiFXSmartBulb{
+		hardware ethernet d0:73:d5:01:83:08;
+		fixed-address 192.170.0.16;
+	}
+
+	host TribySpeaker{
+		hardware ethernet 18:b7:9e:02:20:44;
+		fixed-address 192.170.0.17;
+	}
+
+	host PIX-STARPhoto-frame{
+		hardware ethernet e0:76:d0:33:bb:85;
+		fixed-address 192.170.0.18;
+	}
+
+	host NestDropcam{
+		hardware ethernet 30:8c:fb:b6:ea:45;
+		fixed-address 192.170.0.19;
+	}
+
+	host AndroidPhone{
+		hardware ethernet 40:f3:08:ff:1e:da;
+		fixed-address 192.170.0.20;
+	}
+
+	host Laptop{
+		hardware ethernet 74:2f:68:81:69:42;
+		fixed-address 192.170.0.21;
+	}
+
+	host MacBook{
+		hardware ethernet ac:bc:32:d4:6f:2f;
+		fixed-address 192.170.0.22;
+	}
+
+	host camaraip1{
+		hardware ethernet 08:00:27:15:89:1F;
+		fixed-address 192.170.0.3;
+	}
+
+	host camaraip2{
+		hardware ethernet AC:DE:48:00:11:22;
+		fixed-address 192.170.0.4;
+	}
+
+	host NetatmoWelcome{
+		hardware ethernet 70:ee:50:18:34:43;
+		fixed-address 192.170.0.5;
+	}
+
+	host TP-LinkDayNightCloudcamera{
+		hardware ethernet f4:f2:6d:93:51:f1;
+		fixed-address 192.170.0.6;
+	}
+
+	host SamsungSmartCam{
+		hardware ethernet 00:16:6c:ab:6b:88;
+		fixed-address 192.170.0.7;
+	}
+
+	host Dropcam{
+		hardware ethernet 30:8c:fb:2f:e4:b2;
+		fixed-address 192.170.0.8;
+	}
+
+	host BelkinWemoswitch{
+		hardware ethernet ec:1a:59:79:f4:89;
+		fixed-address 192.170.0.9;
+	}
+
+	host TP-LinkSmartplug{
+		hardware ethernet 50:c7:bf:00:56:39;
+		fixed-address 192.170.0.10;
+	}
+
+	host NESTProtectsmokealarm{
+		hardware ethernet 18:b4:30:25:be:e4;
+		fixed-address 192.170.0.11;
+	}
+
+	host Netatmoweatherstation{
+		hardware ethernet 70:ee:50:03:b8:ac;
+		fixed-address 192.170.0.12;
+	}
+
+	host WithingsSmartscale{
+		hardware ethernet 00:24:e4:1b:6f:96;
+		fixed-address 192.170.0.13;
+	}
+
+	host BlipcareBloodPressuremeter{
+		hardware ethernet 74:6a:89:00:2e:25;
+		fixed-address 192.170.0.14;
+	}
+
+	host WithingsAurasmartsleepsensor{
+		hardware ethernet 00:24:e4:20:28:c6;
+		fixed-address 192.170.0.15;
+	}
+
+	host LightBulbsLiFXSmartBulb{
+		hardware ethernet d0:73:d5:01:83:08;
+		fixed-address 192.170.0.16;
+	}
+
+	host TribySpeaker{
+		hardware ethernet 18:b7:9e:02:20:44;
+		fixed-address 192.170.0.17;
+	}
+
+	host PIX-STARPhoto-frame{
+		hardware ethernet e0:76:d0:33:bb:85;
+		fixed-address 192.170.0.18;
+	}
+
+	host NestDropcam{
+		hardware ethernet 30:8c:fb:b6:ea:45;
+		fixed-address 192.170.0.19;
+	}
+
+	host AndroidPhone{
+		hardware ethernet 40:f3:08:ff:1e:da;
+		fixed-address 192.170.0.20;
+	}
+
+	host Laptop{
+		hardware ethernet 74:2f:68:81:69:42;
+		fixed-address 192.170.0.21;
+	}
+
+	host MacBook{
+		hardware ethernet ac:bc:32:d4:6f:2f;
+		fixed-address 192.170.0.22;
+	}
+
+	host AndroidPhone1{
+		hardware ethernet b4:ce:f6:a7:a3:c2;
+		fixed-address 192.170.0.23;
+	}
+
+	host IPhone{
+		hardware ethernet d0:a6:37:df:a1:e1;
+		fixed-address 192.170.0.24;
+	}
+
+	host MacBookIphone{
+		hardware ethernet f4:5c:89:93:cc:85;
+		fixed-address 192.170.0.25;
+	}
